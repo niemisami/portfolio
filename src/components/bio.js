@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import Image from 'gatsby-image'
 
 
 const Bio = () => {
@@ -35,7 +35,7 @@ const Bio = () => {
   return (
     <div
       style={{
-        display: `flex`
+        display: 'flex'
       }}
     >
       <Image
@@ -44,16 +44,20 @@ const Bio = () => {
         style={{
           marginBottom: 0,
           minWidth: 50,
-          borderRadius: `100%`,
+          borderRadius: '100%',
         }}
         imgStyle={{
-          borderRadius: `50%`,
+          borderRadius: '50%',
         }}
       />
       <p>
-        Written by <strong>{author}</strong> who lives and works in San
+        Written by
+        {' '}
+        <strong>{author}</strong>
+        {' '}
+who lives and works in San
         Francisco building useful things.
-        {` `}
+        {' '}
         <a href={`https://twitter.com/${social.twitter}`}>
           You should follow him on Twitter
         </a>

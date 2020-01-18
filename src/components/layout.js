@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
 
 class Layout extends React.Component {
   render() {
@@ -16,11 +16,11 @@ class Layout extends React.Component {
         >
           <Link
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: 'inherit',
             }}
-            to={`/`}
+            to="/"
           >
             {title}
           </Link>
@@ -30,17 +30,17 @@ class Layout extends React.Component {
       header = (
         <h3
           style={{
-            fontFamily: `Inter, sans-serif`,
+            fontFamily: 'Inter, sans-serif',
             marginTop: 0,
           }}
         >
           <Link
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: 'inherit',
             }}
-            to={`/`}
+            to="/"
           >
             {title}
           </Link>
@@ -50,15 +50,18 @@ class Layout extends React.Component {
     return (
       <div
         style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
+          marginLeft: 'auto',
+          marginRight: 'auto',
         }}
       >
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
+          ©
+          {' '}
+          {new Date().getFullYear()}
+, Built with
+          {' '}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>

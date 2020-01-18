@@ -1,0 +1,5 @@
+/config/*
+/scripts/*
+/public/*
+/static/*
+/gatsby-config.js

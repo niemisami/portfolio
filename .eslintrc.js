@@ -4,7 +4,7 @@ module.exports = {
     'simple-import-sort',
   ],
   rules: {
-    semi: 0,
+    semi: ['error', 'never'],
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
     'comma-dangle': 0,
     'no-console': [
@@ -37,6 +37,7 @@ module.exports = {
         }
       }
     ],
+    'object-curly-newline': ["error", { "multiline": true }],
     'space-before-function-paren': [
       'error',
       'never'

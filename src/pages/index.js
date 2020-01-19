@@ -1,63 +1,45 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import '../styles/index.scss'
-import Bio from '../components/bio'
-import Layout from '../components/layout'
+import Home from '../components/Home'
 import SEO from '../components/seo'
 
-const App = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
-
+const App = ({ data }) => {
+  const { html, frontmatter } = data.markdownRemark
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title='All posts' />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3>
-                <Link to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{ __html: node.frontmatter.description || node.excerpt, }}
-              />
-            </section>
-          </article>
-        )
-      })}
-    </Layout>
+    <>
+      <Home
+        html={html}
+        {...frontmatter}
+      />
+      <SEO />
+    </>
   )
 }
 
 export default App
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
+  query HomePage {
+    markdownRemark(fileAbsolutePath: { regex: "/home.md/" }) {
+      html
+      frontmatter {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
+        description
+        professions
+        profilePic {
+          childImageSharp {
+            fixed(width: 360) {
+              ...GatsbyImageSharpFixed
+            }
           }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
+        }
+        hero {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }

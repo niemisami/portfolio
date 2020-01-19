@@ -7,4 +7,6 @@ html { font-family: 'Inter', sans-serif; }
 
 @tailwind components;
 
+@import './markdown';
+
 @tailwind utilities;

@@ -20,18 +20,10 @@ class BlogPostTemplate extends React.Component {
         />
         <article>
           <header>
-            <h1
-              style={{
-                marginBottom: 0,
-              }}
-            >
+            <h1>
               {post.frontmatter.title}
             </h1>
-            <p
-              style={{
-                display: 'block',
-              }}
-            >
+            <p>
               {post.frontmatter.date}
             </p>
           </header>
@@ -43,15 +35,7 @@ class BlogPostTemplate extends React.Component {
         </article>
 
         <nav>
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              listStyle: 'none',
-              padding: 0,
-            }}
-          >
+          <ul>
             <li>
               {previous && (
                 <Link to={previous.fields.slug} rel='prev'>

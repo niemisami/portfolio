@@ -4,13 +4,42 @@ module.exports = {
     'simple-import-sort',
   ],
   rules: {
-    'semi': 0,
+    semi: 0,
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
     'comma-dangle': 0,
     'no-console': [
       'warn',
       {
         allow: ['warn', 'error'],
       },
+    ],
+    'keyword-spacing': [
+      'error',
+      {
+        after: true,
+        before: true,
+        overrides: {
+          if: {
+            after: false
+          },
+          for: {
+            after: false
+          },
+          while: {
+            after: false
+          },
+          switch: {
+            after: false
+          },
+          catch: {
+            after: false
+          }
+        }
+      }
+    ],
+    'space-before-function-paren': [
+      'error',
+      'never'
     ],
     'simple-import-sort/sort': [
       2,
@@ -23,6 +52,7 @@ module.exports = {
     'sort-imports': 0,
     'import/order': 0,
     'arrow-parens': [1, 'as-needed'],
+    'jsx-quotes': ["error", "prefer-single"],
     'react/jsx-wrap-multilines': [
       1,
       {

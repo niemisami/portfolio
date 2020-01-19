@@ -69,7 +69,9 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'react/prefer-stateless-function': 0,
     'react/no-danger': 0,
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'react/require-default-props': 0,
+    'react/jsx-props-no-spreading': 0
   },
   globals: {
     __PATH_PREFIX__: true,
